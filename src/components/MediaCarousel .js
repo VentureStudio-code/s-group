@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Box } from '@mui/material';
+import { Box, CardMedia, Grid } from '@mui/material';
 
 const MediaCarousel = () => {
   const responsive = {
@@ -24,8 +24,8 @@ const MediaCarousel = () => {
   };
 
   return (
-    <Box sx={{ width: '40%', margin: 'auto' }}>
-      <Carousel
+    <Box sx={{ width: {xs:"90%",sm:"80%",md:"60%",lg:"40%"}, margin: 'auto' }}>
+      {/* <Carousel
         responsive={responsive}
         infinite={true}
         autoPlay={true}
@@ -36,50 +36,19 @@ const MediaCarousel = () => {
         containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile"]}
         arrows={false}
-      >
-        {/* Image */}
-        <div>
-          <img src="https://via.placeholder.com/400x300?text=Image" alt="Image" style={{ width: '100%', height: 'auto' }} />
-        </div>
-
-        {/* GIF */}
-        <div>
-          <img src="https://media.giphy.com/media/3o85xIO33l7RlmLR4I/giphy.gif" alt="Gif" style={{ width: '100%', height: 'auto' }} />
-        </div>
-
-        {/* Video */}
-        <div>
-          <video
-            controls
-            style={{ width: '100%', height: 'auto' }}
-          >
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        {/* Another Image */}
-        <div>
-          <img src="https://via.placeholder.com/400x300?text=Image+2" alt="Image 2" style={{ width: '100%', height: 'auto' }} />
-        </div>
-
-        {/* Another GIF */}
-        <div>
-          <img src="https://media.giphy.com/media/l3vR85PnGsBwu1PFK/giphy.gif" alt="Gif 2" style={{ width: '100%', height: 'auto' }} />
-        </div>
-
-        {/* Another Video */}
-        <div>
-          <video
-            controls
-            style={{ width: '100%', height: 'auto' }}
-          >
-            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-      </Carousel>
+      > */}
+       <Grid p={0}>
+              <CardMedia
+                src={require("../assets/video/S-Group-VIP-Black-Tie-Gala-Dinner.mov")}
+                component={"video"}
+                  alt="s-group"
+                  // controls
+                  autoPlay
+                  muted
+                  sx={{ width: "100%", height: "22rem", objectFit: "cover" }}
+              />
+            </Grid>
+      {/* </Carousel> */}
     </Box>
   );
 };

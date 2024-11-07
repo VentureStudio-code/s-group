@@ -178,6 +178,7 @@ const About = () => {
       <MembersInfoList />
       <MissionStatement />
       <Section3 />
+      <Section4 />
     </Grid2>
   );
 };
@@ -523,13 +524,161 @@ const Section3 = () => {
           return (
             <Grid2 sx={{ borderLeft: `1px solid ${MyColor.borderColor}` }}>
               <Typography
-                sx={{ pt: 2,pb:2, pl: { sm: 4, xs: 4 }, fontWeight: "400" }}
+                sx={{ pt: 2, pb: 2, pl: { sm: 4, xs: 4 }, fontWeight: "400" }}
               >
                 {item.text}
               </Typography>
             </Grid2>
           );
         })}
+      </Grid2>
+    </Grid2>
+  );
+};
+
+const Section4 = () => {
+  return (
+    <Grid2>
+      <Leftcardmedia
+        height={35}
+        topheading={"“The Strength of the Wolf is in the Pack.”"}
+        p1={
+          "The S-Group strongly believes in the power of unity and collaboration. We believe that “The Strength of the Wolf is in the Pack.” Together, we navigate the complexities of business and life, supporting and uplifting one another along the way. The S-Group has facilitated life-changing experiences and even played a role in life-saving moments for many of our members."
+        }
+        p2={
+          "Our community is built on the principle of accelerating the endeavors of each member. We strive to expand the network and net worth of every individual within our group. At the S-Group, we understand the importance of connections and the immense value they hold."
+        }
+        subheading={"Our Channels"}
+        p3={
+          "Our channels, namely S-Vest 2.0 and S-Vest SA, are platforms that provide daily trades and investment insights. These channels are curated by select professional contributors who offer their expertise, including insights on entry and exit points, and overall market analysis primarily focused on South African (SA) and US equities."
+        }
+        p5={
+          "By being part of the S-Group and utilizing these channels, members gain access to a community of like-minded individuals, valuable market information, and expert advice. Together, we strive for success and growth in our businesses and investments."
+        }
+        p4={
+          "These two channels, S-Vest 2.0 and S-Vest SA, are particularly valuable as their monetary worth can be directly attributed to the channel and advice provided. Membership in S-Vest SA, our JSE-focused trading group, is complimentary when joining S-Vest 2.0."
+        }
+        imageurl={require("../assets/images/sec4image1.jpg")}
+      />
+      <Rightcardmedia
+        p4={
+          "By being a part of the S-Group, our members have access to a supportive and dynamic community that offers both professional and social connectivity, enabling them to forge meaningful relationships and collaborate on projects that drive growth and positive change."
+        }
+        p3={
+          "Our platform is designed to facilitate both professional and social connections, fostering an environment where members can engage in projects that contribute to expanding foreign investment on the African continent. We are dedicated to building a better world together and actively encourage our members to pay their goodness forward, creating a positive impact for communities and individuals in need."
+        }
+        p2={
+          "In addition to S-Biz, we have S-Connect group channels that are specifically focused on sectors, interests, or locations. These group channels provide a space for members to engage in discussions and debates that are strictly relevant to the group’s description. Examples of these groups include S-Connect Africa, S-Connect London, S-Connect Women, and S-Connect Biz Tech. These channels enable members to connect with others who share a common interest or focus, fostering valuable conversations and collaborations within specific industries or regions."
+        }
+        p1={
+          "Within the S-Group, we have two important business groups: S-Biz South Africa and S-Biz Global. These groups serve as platforms for entrepreneurs and corporate leaders to connect, collaborate, and bring their ideas to life. By joining these groups, our members gain the opportunity to find suppliers, offer their services, and exchange valuable contacts and insights, all through a single message. We believe in the power of networking and making things happen through meaningful connections."
+        }
+        imageurl={require("../assets/images/sec4image2.jpeg")}
+      />
+      <Leftcardmedia
+      
+      height={40}
+        p6={
+          "We strongly encourage our members to take full advantage of these opportunities to connect with fellow members and industry professionals. Whether through virtual interactions on our online platforms or in-person networking events, the S-Group is committed to creating an environment that empowers members to grow both professionally and personally."
+        }
+        p5={
+          "One of the highlights of our calendar is the annual yearend two-day S-Group Social Business Networking event. This event allows members and guests to network and engage with influential individuals from various industries. It offers a unique platform to establish and cultivate valuable business connections in an enjoyable, informal, and relaxed atmosphere."
+        }
+        p4={
+          "Additionally, attending our S-Group Business Networking events throughout the year is highly encouraged. These events offer an ideal setting to meet and connect with other members in person, fostering relationships and opening doors for collaborations and business opportunities."
+        }
+        p3={
+          "To connect and engage with other members of the S-Group community, there are various options available. You can utilize our online platforms to engage in discussions, share insights, and network with fellow members. These virtual spaces provide opportunities for meaningful connections and collaborations."
+        }
+        subheading={"Connect With Us"}
+        p2={
+          "In addition to the S-Group Member Engagement Hub, our website also includes an archive of informative and entertaining webinars. These webinars feature notable guests such as Jordan Belfort, Bob Diamond, the late Shane Warne, and Rwandan President Paul Kagame. These webinars cover a wide range of topics and provide valuable insights that can greatly benefit our members."
+        }
+        p1={
+          "As a member of the S-Group, you have access to the S-Group Member Engagement Hub and the S-Group Member Directory. This directory allows you to connect with other members based on the Tier you are subscribed to. Whether you are looking for potential business partners, service providers, or simply want to expand your network, the S-Group Member Directory provides a platform to connect with like-minded individuals."
+        }
+        topheading={"Access to Member Directory "}
+        imageurl={require("../assets/images/sec4image3.jpeg")}
+      />
+    </Grid2>
+  );
+};
+
+const Leftcardmedia = ({
+  imageurl,
+  p1,
+  p2,
+  p3,
+  p4,
+  p5,
+  p6,
+  topheading,
+  subheading,
+  height
+}) => {
+  return (
+    <Grid2 md={12} lg={12} sx={{display:{md:"flex",lg:"flex"},background:"#ECECEC",alignItems:"center"}}>
+      <Grid2 md={6} lg={6} sx={{width:{md:"30%",lg:"30%"}}}>
+        <CardMedia
+          component="img"
+          height="400"
+          image={imageurl}
+          alt="Slogo"
+          sx={{
+            objectFit: "cover",
+            width:"100%",
+            height:`${height}rem`
+          }}
+        />
+      </Grid2>
+      <Grid2 md={6} lg={6} sx={{width:{md:"70%",lg:"70%"},paddingInline:8,}} >
+        <Typography sx={{pb:3,textAlign:"center", fontSize:"1.5rem",color:MyColor.borderColor}}>{topheading}</Typography>
+        <Typography sx={{fontSize:"0.8rem"}}>{p1}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p2}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p3}</Typography>
+        <Typography sx={{fontSize:"0.9rem",pt:2 , pb:2,fontWeight:"600"}}>{subheading}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p4}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p5}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p6}</Typography>
+      </Grid2>
+    </Grid2>
+  );
+};
+const Rightcardmedia = ({
+  imageurl,
+  p1,
+  p2,
+  p3,
+  p4,
+  p5,
+  p6,
+  topheading,
+  subheading,
+}) => {
+  return (
+    <Grid2  md={12} lg={12} sx={{display:{md:"flex",lg:"flex"},alignItems:"center"}}>
+      <Grid2  md={6} lg={6} sx={{width:{md:"70%",lg:"70%"},paddingInline:8}}>
+        <Typography>{topheading}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p1}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p2}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p3}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{subheading}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p4}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p5}</Typography>
+        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p6}</Typography>
+      </Grid2>
+      <Grid2 md={6} lg={6} sx={{width:{md:"30%",lg:"30%"}}}>
+        <CardMedia
+          component="img"
+          height="200"
+          image={imageurl}
+          alt="Slogo"
+          sx={{
+            objectFit: "cover",
+            width:"100%",
+            height:"30rem"
+          }}
+        />
       </Grid2>
     </Grid2>
   );

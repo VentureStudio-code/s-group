@@ -1,0 +1,78 @@
+.fc-toolbar {
+    background-color: #fff; 
+    color: #333;               
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .fc .fc-toolbar-title{
+    font-size: 1.1rem;
+  }
+
+
+  .fc .fc-button-primary{
+   background-color: transparent ; 
+   border-color:transparent ; 
+   color: #e0a361;
+  }
+  .fc .fc-button-primary:disabled{
+    background-color: transparent ; 
+    border-color:transparent ; 
+    color: #ccc;  
+    display: none; 
+  }
+
+  .fc .fc-button-primary:hover {
+    background-color: transparent; 
+    border-color: transparent; 
+    color: #e0a361; /* Keep the same color when hovered */
+ }
+  
+  .fc-col-header-cell {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .fc-daygrid-day {
+    border: 1px dashed #ddd;
+  }
+
+  .fc-day-today .fc-daygrid-day-number {
+    color: #A47C52;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+  
+  .fc-day-today {
+    background-color: #ECECEC !important;
+    font-weight: bold;
+  }
+  
+  .fc-h-event{
+    border-left: 5px solid #A47C52 !important;
+    border: none;
+    width: 15vw;
+  }
+  
+  .fc-event { 
+    background-color: #b9ac9d; 
+    color: #A47C52;
+    border-radius: 1px;
+    padding: 2px 5px;
+  }
+  .fc-event:hover { 
+    cursor: pointer;
+    background-color: #bb8e5a; 
+    color: #a79684;
+    border-radius: 1px;
+    padding: 2px 5px;
+  }
+  
+  .fc-event-title {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .fc-daygrid-event-dot {
+    background-color: #ff5722;
+  }
+  

@@ -1,12 +1,20 @@
 // src/pages/Home.js
 import React from "react";
-import { Box, Button, Divider, Grid, Grid2, Typography } from "@mui/material";
+import { Box, Button, CardMedia, Divider, Grid, Grid2, Typography } from "@mui/material";
 import myImage from "../assets/images/landinimage.png";
 import { MyColor } from "../assets/color";
 import Applogo from "../assets/images/s-group-logo.png";
 import Applogoblack from "../assets/images/SGroup-Logo_black.webp";
 import CarouselWithMultiItems from "../components/CarouselWithMultiItems ";
 import MediaCarousel from "../components/MediaCarousel ";
+
+
+const MemberVideoData =[
+  {id:1,titile:"",videourl:require("../assets/video/memberssay1.mp4")},
+  {id:2,titile:"",videourl:require("../assets/video/memberssay2.mp4")},
+  {id:3,titile:"",videourl:require("../assets/video/memberssay3.mp4")},
+  {id:4,titile:"",videourl:require("../assets/video/memberssay4.mov")},
+]
 const Home = () => {
   return (
     <Grid2>
@@ -61,7 +69,7 @@ const Home = () => {
       <Grid2>
         <MediaCarousel/>
       </Grid2>
-      <Grid2 sx={{mb:1, mt:2}}>
+      <Grid2 sx={{mb:0, mt:1}}>
         <CarouselWithMultiItems/>
       </Grid2>
     </Grid2>
@@ -553,24 +561,26 @@ const LandingComponent2 = () => {
             display: "flex",
           }}
         >
-          {[1, 2, 3, 4].map(() => {
-            return (
-              <Box
-                sx={{
-                  p: 2,
-                  display: "flex",
-                  width: "22%",
-                  textAlign: "center",
-                }}
-              >
-                <img
-                  src={Applogo}
+
+<Grid container spacing={1} p={2}>
+        {MemberVideoData.map((item, index) => (
+          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+            <CardMedia
+                  component={"video"}
                   alt="s-group"
-                  style={{ width: "100%", height: "5rem" }}
-                />
-              </Box>
-            );
-          })}{" "}
+                  controls
+                  autoPlay
+                  muted
+                  src={item.videourl}
+                  sx={{ width: "100%", height: "10rem", objectFit: "cover" }}
+                  />
+          </Grid>
+        ))}
+      </Grid>
+
+
+
+        
         </Grid>
       </Grid>
     </Box>

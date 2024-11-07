@@ -28,7 +28,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation()
   const navigate = useNavigate()
-console.log("location",location)
+console.log("location",location.pathname)
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
@@ -38,7 +38,8 @@ console.log("location",location)
     { text: "Group structure",type:"null", path: "/s-group-memberships" },
     { text: "Apply for s-group Membership",type:"null", path: "/apply-for-s-group-membership" },
     { text: "member's portal", typr:"link",  path: "https://app.glueup.com/org/s-group/about/" },
-    { text: "events",type:"null", path: "/businessnetworkingevents" },
+    { text: "events",type:"null", path: "/" },
+    // { text: "events",type:"null", path: "/businessnetworkingevents" },
     { text: "webinars",type:"null", path: "/s-group-webinars" },
     { text: "s-travel", type:"link", path: "https://stravel.co.za/" },
   ];
@@ -54,6 +55,10 @@ console.log("portal",navLinks)
         return 'Events';
       case '/s-group-webinars':
         return 'Webinars';
+      case '/terms-and-condition':
+        return 'S-Group Network (Pty) Ltd TERMS AND CONDITIONS';
+      case '/s-group-network-pty-ltd-disclaimer':
+        return 'S-Group Network (Pty) Ltd disclaimer';
     }
   };
   
@@ -88,7 +93,10 @@ console.log("portal",navLinks)
                 textTransform: "uppercase",
                 fontSize: "0.75rem",
                 letterSpacing: "1px",
-                color: MyColor.fontcolor,
+                color:location.pathname=="/"? MyColor.borderColor :MyColor.fontcolor,
+                "&:hover": {
+                  color: MyColor.borderColor, // Set the desired hover color here
+                },
               }}
               component={Link}
               to="/"
@@ -101,7 +109,10 @@ console.log("portal",navLinks)
                 textTransform: "uppercase",
                 fontSize: "0.75rem",
                 letterSpacing: "1px",
-                color: MyColor.fontcolor,
+                color:location.pathname=="/about-the-s-group"? MyColor.borderColor : MyColor.fontcolor,
+                "&:hover": {
+                  color: MyColor.borderColor, // Set the desired hover color here
+                },
               }}
               component={Link}
               to="/about-the-s-group"
@@ -114,7 +125,10 @@ console.log("portal",navLinks)
                 textTransform: "uppercase",
                 fontSize: "0.75rem",
                 letterSpacing: "1px",
-                color: MyColor.fontcolor,
+                color:location.pathname=="/s-group-memberships"? MyColor.borderColor : MyColor.fontcolor,
+                "&:hover": {
+                  color: MyColor.borderColor, // Set the desired hover color here
+                },
               }}
               component={Link}
               to="/s-group-memberships"
@@ -127,7 +141,10 @@ console.log("portal",navLinks)
                 textTransform: "uppercase",
                 fontSize: "0.75rem",
                 letterSpacing: "1px",
-                color: MyColor.fontcolor,
+                color:location.pathname=="/apply-for-s-group-membership"? MyColor.borderColor : MyColor.fontcolor,
+                "&:hover": {
+                  color: MyColor.borderColor, // Set the desired hover color here
+                },
               }}
               component={Link}
               to="/apply-for-s-group-membership"
@@ -141,6 +158,9 @@ console.log("portal",navLinks)
                 fontSize: "0.75rem",
                 letterSpacing: "1px",
                 color: MyColor.fontcolor,
+                "&:hover": {
+                  color: MyColor.borderColor, // Set the desired hover color here
+                },
               }}
               component={Link}
               onClick={()=>window.open("https://app.glueup.com/org/s-group/about/" ,{target:"_blank"})}
@@ -153,7 +173,10 @@ console.log("portal",navLinks)
                 textTransform: "uppercase",
                 fontSize: "0.75rem",
                 letterSpacing: "1px",
-                color: MyColor.fontcolor,
+                color:location.pathname=="/businessnetworkingevents"? MyColor.borderColor : MyColor.fontcolor,
+                "&:hover": {
+                  color: MyColor.borderColor, // Set the desired hover color here
+                },
               }}
               component={Link}
               to="/businessnetworkingevents"
@@ -166,7 +189,10 @@ console.log("portal",navLinks)
                 textTransform: "uppercase",
                 fontSize: "0.75rem",
                 letterSpacing: "1px",
-                color: MyColor.fontcolor,
+                color: location.pathname=="/s-group-webinars"? MyColor.borderColor :MyColor.fontcolor,
+                "&:hover": {
+                  color: MyColor.borderColor, // Set the desired hover color here
+                },
               }}
               component={Link}
               to="/s-group-webinars"
@@ -179,21 +205,24 @@ console.log("portal",navLinks)
                 textTransform: "uppercase",
                 fontSize: "0.75rem",
                 letterSpacing: "1px",
-                color: MyColor.fontcolor,
+                color:location.pathname==""? MyColor.borderColor : MyColor.fontcolor,
+                "&:hover": {
+                  color: MyColor.borderColor, // Set the desired hover color here
+                },
               }}
               component={Link}
               onClick={()=>window.open("https://stravel.co.za/" ,{target:"_blank"})}
                >
               s-travel
             </Button>
-            <IconButton>
+            <IconButton onClick={()=>navigate("/cart")}>
               <ShoppingCartIcon sx={{ color: "#fff", fontSize: "1rem" }} />
             </IconButton>
           </Grid2>
         ) : (
           <>
             <Grid2 container justifyContent="flex-end" alignItems="center">
-              <IconButton color="inherit">
+              <IconButton onClick={()=>navigate("/cart")} color="inherit">
                 <ShoppingCartIcon />
               </IconButton>
               <IconButton onClick={toggleMenu} color="inherit">
@@ -261,6 +290,21 @@ console.log("portal",navLinks)
                                   },
                                 },
                               }}
+                              onClick={()=>{
+                                
+                                
+                                
+                                console.log("link",link)
+                                if(link.type=="root"||link.type=="null"){
+                                  navigate(link.path)
+                                }
+                                if(link.typr=="link"){
+                                  window.open(link.path,{target:"_blank"})
+                                 }
+                              
+                              
+                              
+                              }}
                             />
                           </ListItem>
                           <Divider />
@@ -274,8 +318,9 @@ console.log("portal",navLinks)
           </>
         )}
       </Toolbar>
-       {["/about-the-s-group","/apply-for-s-group-membership","/businessnetworkingevents", "/s-group-webinars"].indexOf(location?.pathname)>-1 && <Toolbar
+       {["/about-the-s-group","/apply-for-s-group-membership","/businessnetworkingevents", "/s-group-webinars","/terms-and-condition","/s-group-network-pty-ltd-disclaimer"].indexOf(location?.pathname)>-1 && <Toolbar
           sx={{
+            p:3,
             height: { xs: "4.5rem", sm: "4.5rem", md: "4.5rem", lg: "6rem" },
             background: MyColor.backgroundColor,
             display: "flex",
@@ -284,7 +329,7 @@ console.log("portal",navLinks)
           }}
         >
           <Typography
-            sx={{fontSize:{xs:"1.5rem",sm:"2rem",md:"2.1rem",lg:"2.2rem"}}}
+            sx={{textAlign:"center", fontSize:{xs:"1.3rem",sm:"2rem",md:"2.1rem",lg:"2.2rem"}}}
             gutterBottom
             fontWeight={"400"}
             textTransform={"uppercase"}
