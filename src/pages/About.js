@@ -218,8 +218,8 @@ const Member = ({ member, index }) => {
           alt="green iguana"
           sx={{
             width: "100%",
-            height: { xs: "24rem", sm: "30rem", md: "25rem", lg: "26rem" },
-            objectFit: "fill",
+            height: { xs: "100%", sm: "100%", md: "25rem", lg: "26rem" },
+            objectFit: {xs:"contain",sm:"cover",md:"cover",lg:"cover"},
           }}
         />
       </Grid2>
