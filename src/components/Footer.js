@@ -9,9 +9,14 @@ const Footer = () => {
     <Grid
       sx={{
         display: "flex",
-        alignItems: {xs:"flex-start",md:"flex-end",sm:"flex-end",lg:"flex-end",},
+        alignItems: {
+          xs: "flex-start",
+          md: "flex-end",
+          sm: "flex-end",
+          lg: "flex-end",
+        },
         justifyContent: "space-between",
-        flexDirection:{xs:"column",md:"row",sm:"row",lg:"row"}
+        flexDirection: { xs: "column", md: "row", sm: "row", lg: "row" },
       }}
     >
       {/* Left Side - Contact Info */}
@@ -62,7 +67,7 @@ const Footer = () => {
         container
         direction="column"
         alignItems={{ xs: "flex-start", md: "flex-end" }}
-        pt={{xs:5}}
+        pt={{ xs: 5 }}
       >
         {/* Logo */}
 
@@ -81,7 +86,7 @@ const Footer = () => {
                 borderColor: "#f7f7f7",
                 "&:hover": { borderColor: "#EFB87B", color: "#EFB87B" },
               }}
-              onClick={()=>navigate("/")}
+              onClick={() => navigate("/")}
               // onClick={()=>navigate("/s-group-network-pty-ltd-disclaimer")}
             >
               Disclaimer
@@ -96,7 +101,7 @@ const Footer = () => {
                 borderColor: "#f7f7f7",
                 "&:hover": { borderColor: "#EFB87B", color: "#EFB87B" },
               }}
-              onClick={()=>navigate("/")}
+              onClick={() => navigate("/")}
               // onClick={()=>navigate("/privacy-policy")}
             >
               Privacy Policy
@@ -111,12 +116,25 @@ const Footer = () => {
                 borderColor: "#f7f7f7",
                 "&:hover": { borderColor: "#EFB87B", color: "#EFB87B" },
               }}
-              onClick={()=>navigate("/")}
+              onClick={() => navigate("/")}
               // onClick={()=>navigate("/terms-and-condition")}
             >
               Terms and Conditions
             </Button>
           </Grid>
+        </Grid>
+        <Grid p={2} pb={0} pl={0}>
+          <Typography fontSize={"0.8rem"}>
+            Made with love by{" "}
+            <a
+              style={{ color: MyColor.borderColor, textDecoration: "none" }}
+              href="https://theventurestudio.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              The Venture Studio
+            </a>
+          </Typography>
         </Grid>
       </Grid>
     </Grid>

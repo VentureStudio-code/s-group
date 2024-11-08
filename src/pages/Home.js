@@ -37,6 +37,7 @@ const Home = () => {
             borderColor: MyColor.backgroundColor,
             p: 1,
           }}
+          onClick={()=>window.open("https://app.glueup.com/org/s-group/memberships/",{target:"_blank"})}
         >
           Members Only Login
         </Button>
@@ -283,6 +284,9 @@ const LandingComponent1 = () => {
             pr: 3,
             fontSize: "1.2rem",
           }}
+          
+          onClick={()=>window.open("https://app.glueup.com/org/s-group/memberships/",{target:"_blank"})}
+        
         >
           APPLY FOR MEMBERSHIP
         </Button>

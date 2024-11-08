@@ -209,7 +209,7 @@ const Member = ({ member, index }) => {
         xs={6}
         sm={6}
         md={6}
-        sx={{ width: { xs: "100%", sm: "100%%", md: "40%", lg: "40%" } }}
+        sx={{ width: { xs: "100%", sm: "100%%", md: "40%", lg: "35%" },height: { xs: "100%", sm: "100%", md: "25rem", lg: "36rem" }, }}
       >
         <CardMedia
           component="img"
@@ -218,7 +218,7 @@ const Member = ({ member, index }) => {
           alt="green iguana"
           sx={{
             width: "100%",
-            height: { xs: "100%", sm: "100%", md: "25rem", lg: "26rem" },
+            height: { xs: "100%", sm: "100%", md: "25rem", lg: "36rem" },
             objectFit: {xs:"contain",sm:"cover",md:"cover",lg:"cover"},
           }}
         />
@@ -229,7 +229,11 @@ const Member = ({ member, index }) => {
         sm={6}
         md={6}
         sx={{
-          width: { xs: "100%", sm: "100%", md: "60%", lg: "60%" },
+          display:"flex",
+          flexDirection:"column",
+          justifyContent:"center",
+          alignItems:"left",
+          width: { xs: "100%", sm: "100%", md: "60%", lg: "65%" },
           pr: { xs: 0, sm: 0, md: 3, lg: 3 },
           pt: { xs: 3, sm: 3, md: 4, lg: 4 },
           pl: { xs: 0, sm: 0, md: 9, lg: 9 },
@@ -251,9 +255,9 @@ const Member = ({ member, index }) => {
               xs: "0.9rem",
               sm: "0.7rem",
               md: "0.7rem",
-              lg: "0.8rem",
+              lg: "0.9rem",
             },
-            pt: 3,
+            pt: {xs:3,sm:3,md:3,lg:5},
           }}
         >
           {member.infotext1}
@@ -264,9 +268,9 @@ const Member = ({ member, index }) => {
               xs: "0.9rem",
               sm: "0.7rem",
               md: "0.7rem",
-              lg: "0.8rem",
+              lg: "0.9rem",
             },
-            pt: 1,
+            pt: {xs:1,sm:1,md:1,lg:3},
           }}
         >
           {member.infotext2}
@@ -277,9 +281,9 @@ const Member = ({ member, index }) => {
               xs: "0.9rem",
               sm: "0.7rem",
               md: "0.7rem",
-              lg: "0.8rem",
+              lg: "0.9rem",
             },
-            pt: 1,
+            pt: {xs:1,sm:1,md:1,lg:3},
           }}
         >
           {member.infotext3}
@@ -577,7 +581,7 @@ const Section4 = () => {
       />
       <Leftcardmedia
       
-      height={40}
+      height={41}
         p6={
           "We strongly encourage our members to take full advantage of these opportunities to connect with fellow members and industry professionals. Whether through virtual interactions on our online platforms or in-person networking events, the S-Group is committed to creating an environment that empowers members to grow both professionally and personally."
         }
@@ -618,20 +622,20 @@ const Leftcardmedia = ({
 }) => {
   return (
     <Grid2 md={12} lg={12} sx={{display:{md:"flex",lg:"flex"},background:"#ECECEC",alignItems:"center"}}>
-      <Grid2 md={6} lg={6} sx={{width:{md:"30%",lg:"30%"}}}>
+      <Grid2 md={6} lg={6} sx={{width:{md:"30%",lg:"40%"}}}>
         <CardMedia
           component="img"
-          height="400"
+          // height="400"
           image={imageurl}
           alt="Slogo"
           sx={{
             objectFit: "cover",
             width:"100%",
-            height:`${height}rem`
+            height:{xs:"100%",sm:"100%",md:`${height}rem`,lg:`${height}rem`}
           }}
         />
       </Grid2>
-      <Grid2 md={6} lg={6} sx={{width:{md:"70%",lg:"70%"},paddingInline:8,}} >
+      <Grid2 md={6} lg={6} sx={{width:{md:"70%",lg:"60%"},pl:8 ,pr:8, pt:2,pb:2}} >
         <Typography sx={{pb:3,textAlign:"center", fontSize:"1.5rem",color:MyColor.borderColor}}>{topheading}</Typography>
         <Typography sx={{fontSize:"0.8rem"}}>{p1}</Typography>
         <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p2}</Typography>
@@ -657,7 +661,7 @@ const Rightcardmedia = ({
 }) => {
   return (
     <Grid2  md={12} lg={12} sx={{display:{md:"flex",lg:"flex"},alignItems:"center"}}>
-      <Grid2  md={6} lg={6} sx={{width:{md:"70%",lg:"70%"},paddingInline:8}}>
+      <Grid2  md={6} lg={6} sx={{width:{md:"65%",lg:"60%"},paddingInline:8}}>
         <Typography>{topheading}</Typography>
         <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p1}</Typography>
         <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p2}</Typography>
@@ -667,16 +671,15 @@ const Rightcardmedia = ({
         <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p5}</Typography>
         <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p6}</Typography>
       </Grid2>
-      <Grid2 md={6} lg={6} sx={{width:{md:"30%",lg:"30%"}}}>
+      <Grid2 md={6} lg={6} sx={{width:{md:"35%",lg:"40%"}}}>
         <CardMedia
           component="img"
-          height="200"
           image={imageurl}
           alt="Slogo"
           sx={{
             objectFit: "cover",
             width:"100%",
-            height:"30rem"
+            height:{xs:"100%",sm:"30rem",md:"30rem",lg:"30rem"}
           }}
         />
       </Grid2>

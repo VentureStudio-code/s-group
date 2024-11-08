@@ -38,8 +38,8 @@ console.log("location",location.pathname)
     { text: "Group structure",type:"null", path: "/s-group-memberships" },
     { text: "Apply for s-group Membership",type:"null", path: "/apply-for-s-group-membership" },
     { text: "member's portal", typr:"link",  path: "https://app.glueup.com/org/s-group/about/" },
-    { text: "events",type:"null", path: "/" },
-    // { text: "events",type:"null", path: "/businessnetworkingevents" },
+    // { text: "events",type:"null", path: "/" },
+    { text: "events",type:"null", path: "/businessnetworkingevents" },
     { text: "webinars",type:"null", path: "/s-group-webinars" },
     { text: "s-travel", type:"link", path: "https://stravel.co.za/" },
   ];

@@ -1,6 +1,6 @@
 // src/pages/Contact.js
 import React, { useState } from "react";
-import { Box, CardMedia, Divider, Grid2, Typography } from "@mui/material";
+import { Box, CardMedia, Divider, Grid, Grid2, Typography } from "@mui/material";
 import { MyColor } from "../assets/color";
 import Applogo from "../assets/images/s-group-logo.png";
 import myImage from "../assets/images/groupstructureback.jpeg";
@@ -600,9 +600,9 @@ const Sectiontwo = () => {
   return (
     <Grid2 container sx={{display:{lg:"flex"}}} lg={12}>
       {hoverCardData.map((item, index) => (
-        <Grid2  item xs={12} sm={6} md={4} key={index}>
+        <Grid  item xs={12} sm={6} md={4} lg={3} key={index}>
            <HoverCard item={item}/>
-        </Grid2>
+        </Grid>
       ))}
     </Grid2>
   );
@@ -632,7 +632,7 @@ const HoverEffectCard = styled(Card)(({ theme }) => ({
     width:  300, // Adjusts width for small screens
   },
   [theme.breakpoints.up("lg")]: {
-    width: window.innerWidth/5.3, // Adjusts width for small screens
+    width: window.innerWidth/5.15, // Adjusts width for small screens
   },
 }));
 
