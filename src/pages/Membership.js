@@ -8,7 +8,7 @@ import Selite from "../assets/images/s-elite.png";
 import Sconnect from "../assets/images/SConnectwhite.png";
 
 import { Card, CardContent } from "@mui/material";
-import { styled } from "@mui/system";
+import { margin, styled } from "@mui/system";
 
 const hoverCardData = [
   {
@@ -610,9 +610,10 @@ const Sectiontwo = () => {
 
 
 const HoverEffectCard = styled(Card)(({ theme }) => ({
-  width: 300, // Full width of its parent
-  height: 300,   // Fixed height
-  margin: 5,
+  width: "100%", // Full width of its parent
+  height: "98%", 
+    // Fixed height
+    margin: 5,
   background: "#ECECEC",
   borderRadius: "0px !important",
   boxShadow: "none",
@@ -621,7 +622,8 @@ const HoverEffectCard = styled(Card)(({ theme }) => ({
     transform: "translateY(15px)", // Moves the card down on hover
   },
   [theme.breakpoints.up("xs")]: {
-    width: "97%", // Adjusts width for small screens
+    width: "99%",
+    margin: 2
   },
   [theme.breakpoints.up("md")]: {
     width: 300, // Adjusts width for small screens
@@ -724,7 +726,7 @@ const FlipCardContainer = styled('div')({
 
 const FlipCardInner = styled('div')({
   position: 'relative',
-  width: '98%',
+  width: '100%',
   height: '100%',
   transition: 'transform 0.9s',
   transformStyle: 'preserve-3d',
@@ -740,7 +742,7 @@ const ResponsiveFlipCardInner = styled(FlipCardInner)(({ theme }) => ({
   width: "100%", // Use 100% width to fit container
   // height: "100%",
   [theme.breakpoints.up('xs')]: {
-    width: '390px', // Width for extra-small screens
+    width: window.innerWidth, // Width for extra-small screens
     height: '390px', // Height for extra-small screens
   },
   [theme.breakpoints.up('sm')]: {
