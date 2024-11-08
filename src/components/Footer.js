@@ -86,8 +86,8 @@ const Footer = () => {
                 borderColor: "#f7f7f7",
                 "&:hover": { borderColor: "#EFB87B", color: "#EFB87B" },
               }}
-              onClick={() => navigate("/")}
-              // onClick={()=>navigate("/s-group-network-pty-ltd-disclaimer")}
+              // onClick={() => navigate("/")}
+              onClick={()=>navigate("/s-group-network-pty-ltd-disclaimer")}
             >
               Disclaimer
             </Button>
@@ -101,8 +101,8 @@ const Footer = () => {
                 borderColor: "#f7f7f7",
                 "&:hover": { borderColor: "#EFB87B", color: "#EFB87B" },
               }}
-              onClick={() => navigate("/")}
-              // onClick={()=>navigate("/privacy-policy")}
+              // onClick={() => navigate("/")}
+              onClick={()=>navigate("/privacy-policy")}
             >
               Privacy Policy
             </Button>
@@ -116,8 +116,8 @@ const Footer = () => {
                 borderColor: "#f7f7f7",
                 "&:hover": { borderColor: "#EFB87B", color: "#EFB87B" },
               }}
-              onClick={() => navigate("/")}
-              // onClick={()=>navigate("/terms-and-condition")}
+              // onClick={() => navigate("/")}
+              onClick={()=>navigate("/terms-and-condition")}
             >
               Terms and Conditions
             </Button>
