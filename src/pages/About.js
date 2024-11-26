@@ -9,12 +9,14 @@ import {
   Divider,
   Grid2,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import Slogo from "../assets/images/SGroup-Logo_black.webp";
 import Slogosection3 from "../assets/images/Elements-1280x529.png";
 import { MyColor } from "../assets/color";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import RemoveCircleRoundedIcon from "@mui/icons-material/RemoveCircleRounded";
+import { useTheme } from "@emotion/react";
 
 const InfoData = [
   {
@@ -244,6 +246,7 @@ const Member = ({ member, index }) => {
           sx={{
             fontSize: { xs: "1.6rem", sm: "1.8rem", md: "2rem", lg: "2rem" },
             color: MyColor.borderColor,
+            textTransform:"uppercase"
           }}
         >
           {member.name}
@@ -295,7 +298,7 @@ const Member = ({ member, index }) => {
 
 const MissionStatement = () => {
   return (
-    <Grid2 sx={{ background: "#ECECEC", p: 5 }} textAlign={"center"}>
+    <Grid2 sx={{ background: "#ECECEC", p: 4 }} textAlign={"center"}>
       <Grid2>
         <CardMedia
           component="img"
@@ -319,8 +322,8 @@ const MissionStatement = () => {
       <Grid2 pt={3}>
         {MissionStatementData.priContent.map((item) => {
           return (
-            <Grid2 textAlign={"center"} paddingInline={2}>
-              <Typography pt={2} sx={{ fontWeight: "700" }}>
+            <Grid2 textAlign={"center"} >
+              <Typography pt={2} sx={{ fontWeight: "700",  }}>
                 {item.title}
               </Typography>
               <Typography
@@ -328,10 +331,10 @@ const MissionStatement = () => {
                   pt: 1,
                   textAlign: "justify",
                   fontSize: {
-                    xs: "0.7rem",
-                    sm: "0.75rem",
-                    md: "0.75rem",
-                    lg: "0.8rem",
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
                   },
                 }}
               >
@@ -342,7 +345,7 @@ const MissionStatement = () => {
         })}
       </Grid2>
 
-      <Grid2 textAlign={"center"} paddingInline={2} pt={3}>
+      <Grid2 textAlign={"center"} paddingInline={0} pt={3}>
         <Typography sx={{ fontWeight: "700" }}>
           {MissionStatementData.secContent.heading}
         </Typography>
@@ -352,7 +355,6 @@ const MissionStatement = () => {
               <Typography
                 sx={{
                   fontWeight: "600",
-                  fontSize: { xs: "", sm: "", md: "", lg: "0.9rem" },
                 }}
                 pt={2}
               >
@@ -363,10 +365,10 @@ const MissionStatement = () => {
                   pt: 1,
                   textAlign: "justify",
                   fontSize: {
-                    xs: "0.7rem",
-                    sm: "0.75rem",
-                    md: "0.75rem",
-                    lg: "0.8rem",
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
                   },
                 }}
               >
@@ -393,7 +395,7 @@ const Section3 = () => {
       md={12}
       lg={12}
       sx={{ display: { md: "flex", lg: "flex" } }}
-      p={5}
+      p={0.5}
     >
       <Grid2
         xs={6}
@@ -541,6 +543,10 @@ const Section3 = () => {
 };
 
 const Section4 = () => {
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.only('xs'));
+  const isSm = useMediaQuery(theme.breakpoints.only('sm'));
+
   return (
     <Grid2>
       <Leftcardmedia
@@ -564,7 +570,10 @@ const Section4 = () => {
         }
         imageurl={require("../assets/images/sec4image1.jpg")}
       />
-      <Rightcardmedia
+      {isXs || isSm ?
+      
+      <RightcardmediaMobile
+      height={35}
         p4={
           "By being a part of the S-Group, our members have access to a supportive and dynamic community that offers both professional and social connectivity, enabling them to forge meaningful relationships and collaborate on projects that drive growth and positive change."
         }
@@ -579,9 +588,26 @@ const Section4 = () => {
         }
         imageurl={require("../assets/images/sec4image2.jpeg")}
       />
+      :
+      <Rightcardmedia
+      height={35}
+        p4={
+          "By being a part of the S-Group, our members have access to a supportive and dynamic community that offers both professional and social connectivity, enabling them to forge meaningful relationships and collaborate on projects that drive growth and positive change."
+        }
+        p3={
+          "Our platform is designed to facilitate both professional and social connections, fostering an environment where members can engage in projects that contribute to expanding foreign investment on the African continent. We are dedicated to building a better world together and actively encourage our members to pay their goodness forward, creating a positive impact for communities and individuals in need."
+        }
+        p2={
+          "In addition to S-Biz, we have S-Connect group channels that are specifically focused on sectors, interests, or locations. These group channels provide a space for members to engage in discussions and debates that are strictly relevant to the group’s description. Examples of these groups include S-Connect Africa, S-Connect London, S-Connect Women, and S-Connect Biz Tech. These channels enable members to connect with others who share a common interest or focus, fostering valuable conversations and collaborations within specific industries or regions."
+        }
+        p1={
+          "Within the S-Group, we have two important business groups: S-Biz South Africa and S-Biz Global. These groups serve as platforms for entrepreneurs and corporate leaders to connect, collaborate, and bring their ideas to life. By joining these groups, our members gain the opportunity to find suppliers, offer their services, and exchange valuable contacts and insights, all through a single message. We believe in the power of networking and making things happen through meaningful connections."
+        }
+        imageurl={require("../assets/images/sec4image2.jpeg")}
+      />}
       <Leftcardmedia
       
-      height={41}
+      height={44}
         p6={
           "We strongly encourage our members to take full advantage of these opportunities to connect with fellow members and industry professionals. Whether through virtual interactions on our online platforms or in-person networking events, the S-Group is committed to creating an environment that empowers members to grow both professionally and personally."
         }
@@ -635,19 +661,54 @@ const Leftcardmedia = ({
           }}
         />
       </Grid2>
-      <Grid2 md={6} lg={6} sx={{width:{md:"70%",lg:"60%"},pl:8 ,pr:8, pt:2,pb:2}} >
+      <Grid2 md={6} lg={6} sx={{width:{md:"70%",lg:"60%"},pl:4 ,pr:4, pt:2,pb:2}} >
         <Typography sx={{pb:3,textAlign:"center", fontSize:"1.5rem",color:MyColor.borderColor}}>{topheading}</Typography>
-        <Typography sx={{fontSize:"0.8rem"}}>{p1}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p2}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p3}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },
+                  
+                  }}>{p1}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },pt:1,textAlign:"justify",}}>{p2}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },pt:1,textAlign:"justify", }}>{p3}</Typography>
         <Typography sx={{fontSize:"0.9rem",pt:2 , pb:2,fontWeight:"600"}}>{subheading}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p4}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p5}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p6}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                    
+                  },pt:1,textAlign:"justify"}}>{p4}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+
+                  },  pt:1,}}>{p5}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },pt:1, textAlign:"justify"}}>{p6}</Typography>
       </Grid2>
     </Grid2>
   );
 };
+
 const Rightcardmedia = ({
   imageurl,
   p1,
@@ -658,18 +719,54 @@ const Rightcardmedia = ({
   p6,
   topheading,
   subheading,
+  height
 }) => {
   return (
     <Grid2  md={12} lg={12} sx={{display:{md:"flex",lg:"flex"},alignItems:"center"}}>
-      <Grid2  md={6} lg={6} sx={{width:{md:"65%",lg:"60%"},paddingInline:8}}>
+      <Grid2  md={6} lg={6} sx={{width:{md:"65%",lg:"60%"},paddingInline:4}}>
         <Typography>{topheading}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p1}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p2}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p3}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{subheading}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p4}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p5}</Typography>
-        <Typography sx={{fontSize:"0.8rem",pt:1,textAlign:"justify"}}>{p6}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },pt:1,textAlign:"justify"}}>{p1}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },textAlign:"justify"}}>{p2}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },pt:1, textAlign:"justify"}}>{p3}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },pt:1,textAlign:"justify"}}>{subheading}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  }, pt:1,textAlign:"justify"}}>{p4}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },}}>{p5}</Typography>
+        <Typography sx={{fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },pt:1}}>{p6}</Typography>
       </Grid2>
       <Grid2 md={6} lg={6} sx={{width:{md:"35%",lg:"40%"}}}>
         <CardMedia
@@ -679,7 +776,162 @@ const Rightcardmedia = ({
           sx={{
             objectFit: "cover",
             width:"100%",
-            height:{xs:"100%",sm:"30rem",md:"30rem",lg:"30rem"}
+            height:{xs:"100%",sm:"100%",md:`${height}rem`,lg:`${height}rem`}
+          }}
+        />
+      </Grid2>
+    </Grid2>
+  );
+};
+
+const RightcardmediaMobile = ({
+  imageurl,
+  p1,
+  p2,
+  p3,
+  p4,
+  p5,
+  p6,
+  topheading,
+  subheading,
+  height
+}) => {
+  return (
+    <Grid2
+      container
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" }, // Change direction on mobile
+        alignItems: "center",
+      }}
+    >
+      <Grid2
+        item
+        md={6}
+        lg={6}
+        sx={{
+          width: { md: "65%", lg: "60%" },
+          paddingInline: 4,
+          order: { xs: 2, md: 1 }, // Content appears below image on mobile
+        }}
+      >
+        <Typography>{topheading}</Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
+            pt: 1,
+            textAlign: "justify",
+          }}
+        >
+          {p1}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            }, 
+            pt: 1,
+            textAlign: "justify",
+          }}
+        >
+          {p2}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
+            pt: 1, 
+            textAlign: "justify",
+          }}
+        >
+          {p3}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
+            pt: 1,
+            textAlign: "justify",
+          }}
+        >
+          {subheading}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
+            pt: 1, 
+            textAlign: "justify",
+          }}
+        >
+          {p4}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
+            pt: 1, 
+            textAlign: "justify",
+          }}
+        >
+          {p5}
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            }, 
+            pt: 1,
+            textAlign: "justify",
+          }}
+        >
+          {p6}
+        </Typography>
+      </Grid2>
+      <Grid2
+        item
+        md={6}
+        lg={6}
+        sx={{
+          width: { md: "35%", lg: "40%" },
+          order: { xs: 1, md: 2 }, // Image appears at the top on mobile
+        }}
+      >
+        <CardMedia
+          component="img"
+          image={imageurl}
+          alt="Slogo"
+          sx={{
+            objectFit: "cover",
+            width: "100%",
+            height: { xs: "100%", sm: "100%", md: `${height}rem`, lg: `${height}rem` },
           }}
         />
       </Grid2>

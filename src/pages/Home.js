@@ -1,7 +1,8 @@
 // src/pages/Home.js
-import React from "react";
+import React, { useRef } from "react";
 import { Box, Button, CardMedia, Divider, Grid, Grid2, Typography } from "@mui/material";
-import myImage from "../assets/images/landinimage.png";
+import myImage from "../assets/images/groupstructureback.jpeg";
+// import myImage from "../assets/images/landinimage.png";
 import { MyColor } from "../assets/color";
 import Applogo from "../assets/images/s-group-logo.png";
 import Applogoblack from "../assets/images/SGroup-Logo_black.webp";
@@ -87,8 +88,9 @@ const BackgroundImageWithText = () => {
         width: "100%",
         height: "100vh",
         backgroundImage: `url(${myImage})`,
-        backgroundSize: "cover", // Ensures the image covers the entire area
-        backgroundPosition: "center",
+        backgroundSize: "cover", // Ensure the image fully covers the area
+        backgroundPosition: {lg:"center",md:"center",xs:"center",sm:"center"},
+        backgroundRepeat: "no-repeat", // Prevents the image from repeating
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -161,7 +163,12 @@ const LandingComponent1 = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: "0.9rem",
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
             pt: 1,
             pb: 1,
             fontWeight: "400",
@@ -177,7 +184,12 @@ const LandingComponent1 = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: "0.9rem",
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
             pt: 1,
             pb: 1,
             fontWeight: "400",
@@ -193,7 +205,12 @@ const LandingComponent1 = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: "0.9rem",
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
             pt: 1,
             pb: 1,
             fontWeight: "400",
@@ -215,7 +232,12 @@ const LandingComponent1 = () => {
         </Typography>
         <Typography
           sx={{
-            fontSize: "0.9rem",
+            fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
             pt: 1,
             pb: 5,
             fontWeight: "400",
@@ -296,6 +318,18 @@ const LandingComponent1 = () => {
 };
 
 const LandingComponent2 = () => {
+  const videoRefs = useRef([]);
+
+  const handleVideoClick = (index) => {
+    const video = videoRefs.current[index];
+    if (video) {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  };
   return (
     <Box sx={{ p: {xs:3,md:10,sm:10,lg:10}, pt: 0, pb: 5, background: MyColor.borderColor }}>
       <Divider sx={{ borderColor: MyColor.borderColor }} />
@@ -331,7 +365,12 @@ const LandingComponent2 = () => {
         <Grid sx={{ p: {xs:1, sm:4, md:4, lg:4}, width: "50%" }} lg={6} xs={6}>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -349,7 +388,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -363,7 +407,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -379,7 +428,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -400,7 +454,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -413,7 +472,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -426,7 +490,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -443,7 +512,12 @@ const LandingComponent2 = () => {
         <Grid sx={{ p: {xs:1, sm:4, md:4, lg:4}, width: "50%" }} lg={6} xs={6}>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -456,7 +530,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -472,7 +551,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -487,7 +571,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -500,7 +589,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -514,7 +608,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -528,7 +627,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -541,7 +645,12 @@ const LandingComponent2 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -572,8 +681,10 @@ const LandingComponent2 = () => {
             <CardMedia
                   component={"video"}
                   alt="s-group"
-                  controls
-                  autoPlay
+                  ref={(el) => (videoRefs.current[index] = el)}
+            onClick={() => handleVideoClick(index)}
+                  controls={false}
+                  autoPlay={false}
                   muted
                   src={item.videourl}
                   sx={{ width: "100%", height: "10rem", objectFit: "cover" }}
@@ -593,7 +704,7 @@ const LandingComponent2 = () => {
 
 const LandingComponent3 = () => {
   return (
-    <Box sx={{ p: {xs:3,md:10,sm:10,lg:10}, pt: 0, pb: 1, background: "#fff" }}>
+    <Box sx={{ p: {xs:2,md:10,sm:10,lg:10}, pt: 0, pb: 1, background: "#fff" }}>
       <Divider sx={{ borderColor: MyColor.borderColor }} />
       <Grid2
         sx={{
@@ -626,7 +737,12 @@ const LandingComponent3 = () => {
         <Grid sx={{ p: {xs:1, sm:4, md:4, lg:4}, width: "50%" }} lg={6} xs={6}>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -641,7 +757,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -654,7 +775,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -667,7 +793,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -681,7 +812,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -693,7 +829,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -710,7 +851,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -728,7 +874,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -743,7 +894,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -756,7 +912,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -769,7 +930,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -786,7 +952,12 @@ const LandingComponent3 = () => {
         <Grid sx={{  p: {xs:1,sm:4, md:4, lg:4}, width: "50%" }} lg={6} xs={6}>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -798,7 +969,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -815,7 +991,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -832,7 +1013,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -851,7 +1037,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",
@@ -872,7 +1063,12 @@ const LandingComponent3 = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: {
+                xs: "0.9rem",
+                sm: "0.7rem",
+                md: "0.7rem",
+                lg: "0.9rem",
+              },
               pt: 1,
               pb: 1,
               fontWeight: "400",

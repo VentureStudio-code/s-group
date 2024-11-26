@@ -39,10 +39,11 @@ const MediaCarousel = () => {
       > */}
        <Grid p={0}>
               <CardMedia
-                src={require("../assets/video/S-Group-VIP-Black-Tie-Gala-Dinner.mov")}
+                src={require("../assets/video/S-Group-VIP-Black-Tie-Gala-Dinner.mp4")}
                 component={"video"}
                   alt="s-group"
                   // controls
+                  loop
                   autoPlay
                   muted
                   sx={{ width: "100%", height: "22rem", objectFit: "cover" }}

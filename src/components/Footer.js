@@ -24,7 +24,7 @@ const Footer = () => {
         <img
           src={Applogo}
           alt="S Group Logo"
-          style={{ marginBottom: "20px", maxWidth: "150px" }}
+          style={{ marginBottom: "20px", maxWidth: "120px" }}
         />
         <Typography
           variant="h6"

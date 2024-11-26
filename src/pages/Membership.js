@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Box, CardMedia, Divider, Grid, Grid2, Typography } from "@mui/material";
 import { MyColor } from "../assets/color";
 import Applogo from "../assets/images/s-group-logo.png";
-import myImage from "../assets/images/groupstructureback.jpeg";
+import myImage from "../assets/images/landinimage.png";
+// import myImage from "../assets/images/groupstructureback.jpeg";
 import Selite from "../assets/images/s-elite.png";
 import Sconnect from "../assets/images/SConnectwhite.png";
 
@@ -324,9 +325,9 @@ const Contact = () => {
       <Grid2>
         <Sectionthree />
       </Grid2>
-      <Grid2>
+      <Grid>
         <Sectionfour />
-      </Grid2>
+      </Grid>
       <Grid2>
         <Sectionfive />
       </Grid2>
@@ -343,8 +344,8 @@ const BackgroundImageWithText = () => {
         position: "relative",
         width: "100%",
         height: "100vh",
+        // linear-gradient(180deg, rgba(11, 20, 46, 0.82) 26%, rgba(11, 20, 46, 0.35) 100%),
         backgroundImage: `
-          linear-gradient(180deg, rgba(11, 20, 46, 0.82) 26%, rgba(11, 20, 46, 0.35) 100%),
           url(${myImage})
         `,
         backgroundSize: "cover", // Ensures the image covers the entire area
@@ -394,7 +395,7 @@ const BackgroundImageWithText = () => {
 
 const Sectionone = () => {
   return (
-    <Grid2 sx={{ p: 7, background: "#ECECEC" }}>
+    <Grid2 sx={{ p: 4.5, background: "#ECECEC" }}>
       <Grid2>
         <Typography
           sx={{
@@ -402,7 +403,6 @@ const Sectionone = () => {
             fontSize: "2rem",
             fontWeight: "400",
             textTransform: "uppercase",
-            p: 2,
           }}
         >
           Tier 1
@@ -412,7 +412,7 @@ const Sectionone = () => {
       <Grid2 p={4}>
         <CardMedia
           component="img"
-          height="100"
+          height="80"
           image={Selite}
           alt="Slogo"
           sx={{
@@ -422,7 +422,12 @@ const Sectionone = () => {
         />
       </Grid2>
       <Grid2>
-        <Typography sx={{ paddingInline: 5, fontSize: "0.85rem" }}>
+        <Typography sx={{ paddingInline: 0,  fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            }, }}>
           Our premium global investment groups, S-Vest 2.0 and S-Vest SA,
           provide an exclusive platform for members to engage in daily trades
           and investment opportunities. These groups are carefully curated by a
@@ -434,7 +439,12 @@ const Sectionone = () => {
           of these groups is quantifiable as members receive expert advice and
           strategies that can lead to profitable outcomes.
         </Typography>
-        <Typography sx={{ paddingInline: 5, pt: 1, fontSize: "0.85rem" }}>
+        <Typography sx={{ paddingInline: 0, pt: 1,  fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            }, }}>
           As a special benefit, membership in the S-Vest SA group channel, which
           specifically focuses on trading in the Johannesburg Stock Exchange
           (JSE), is complimentary with membership in S-Vest 2.0. This
@@ -442,7 +452,12 @@ const Sectionone = () => {
           opportunities in the South African market, enhancing their potential
           for success.
         </Typography>
-        <Typography sx={{ paddingInline: 5, pt: 1, fontSize: "0.85rem" }}>
+        <Typography sx={{ paddingInline: 0, pt: 1,  fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            }, }}>
           In addition to our investment groups, we also offer premium business
           groups, namely S-Biz South Africa and S-Biz Global, designed to cater
           to the needs of entrepreneurs and corporate leaders. These groups
@@ -452,7 +467,12 @@ const Sectionone = () => {
           and explore new and innovative approaches to grow their businesses and
           elevate their professional careers.
         </Typography>
-        <Typography sx={{ paddingInline: 5, pt: 1, fontSize: "0.85rem" }}>
+        <Typography sx={{ paddingInline: 0, pt: 1,  fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            }, }}>
           By being a part of S-Biz, members gain access to a dynamic community
           of like-minded professionals who are driven by success and
           collaboration. Through engaging in meaningful discussions and seeking
@@ -503,9 +523,14 @@ const Sectionthree = () => {
       <Grid2 p={4}>
         <Typography
           sx={{
-            paddingInline: 5,
+            paddingInline: 0,
             pt: 2,
-            fontSize: "0.85rem",
+             fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
             color: "#ECECEC",
           }}
         >
@@ -519,9 +544,14 @@ const Sectionthree = () => {
         </Typography>
         <Typography
           sx={{
-            paddingInline: 5,
+            paddingInline: 0,
             pt: 2,
-            fontSize: "0.85rem",
+             fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
             color: "#ECECEC",
           }}
         >
@@ -533,9 +563,14 @@ const Sectionthree = () => {
         </Typography>
         <Typography
           sx={{
-            paddingInline: 5,
+            paddingInline: 0,
             pt: 2,
-            fontSize: "0.85rem",
+             fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
             color: "#ECECEC",
           }}
         >
@@ -547,9 +582,14 @@ const Sectionthree = () => {
         </Typography>
         <Typography
           sx={{
-            paddingInline: 5,
+            paddingInline: 0,
             pt: 2,
-            fontSize: "0.85rem",
+             fontSize: {
+              xs: "0.9rem",
+              sm: "0.7rem",
+              md: "0.7rem",
+              lg: "0.9rem",
+            },
             color: "#ECECEC",
           }}
         >
@@ -598,15 +638,209 @@ const Sectionfive = () => {
 
 const Sectiontwo = () => {
   return (
-    <Grid2 container sx={{display:{lg:"flex"}}} lg={12}>
-      {hoverCardData.map((item, index) => (
-        <Grid  item xs={12} sm={6} md={4} lg={3} key={index}>
-           <HoverCard item={item}/>
-        </Grid>
-      ))}
-    </Grid2>
+    <ResponsiveGrid hoverCardData={hoverCardData}/>
+    // <Grid2 container sx={{display:{lg:"flex"}}} lg={12}>
+    //   {hoverCardData.map((item, index) => (
+    //     <Grid  item xs={12} sm={6} md={4} lg={3} key={index}>
+    //        <HoverCard item={item}/>
+    //     </Grid>
+    //   ))}
+    // </Grid2>
   );
 };
+
+
+
+
+
+
+const ResponsiveGrid = ({ hoverCardData }) => {
+  return (
+    <Grid container >
+      {hoverCardData.map((card) => (
+        <Grid 
+          item
+          key={card.id}
+          xs={12} // Full width on extra small screens
+          sm={6} // 2 cards per row on small screens
+          md={4} // 3 cards per row on medium screens
+          lg={2.4} // 4 cards per row on large screens
+          p={0.3}
+          sx={{borderRadius:"0px !important"}}
+        >
+          <Card sx={{ height: "100%",background:"#ECECEC",borderRadius:"0px !important",transition: "transform 0.3s ease-in-out",
+              "&:hover": {
+                transform: "translateY(10px)", // Move card upwards by 10px on hover
+              }, }}> {/* Ensure card takes full height */}
+            <CardMedia
+              component="img"
+              height="50"
+              image={card.logo}
+              alt={card.title}
+              sx={{
+                objectFit: "contain",
+                width: "100%",
+                height:"20%",
+                pt: 2,
+              }}
+              />
+            <CardContent sx={{ display: "flex", flexDirection: "column", height: "80%" }}>
+              <Typography
+                sx={{
+                  color: MyColor.borderColor,
+                  textAlign: "center",
+                  pb: 1,
+                  overflow: "hidden",
+                  textOverflow: "ellipsis", // Truncate overflowed text
+                }}
+                variant="h6"
+              >
+                {card.heading}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: "0.9rem",
+                    sm: "0.7rem",
+                    md: "0.7rem",
+                    lg: "0.9rem",
+                  },
+                  textAlign: "center",
+                  pt: 2,
+                  color:"black",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "normal", // Allow wrapping of text
+                  lineHeight: "1.2", // Adjust line height for better spacing
+                  display: "block", // Ensure the text behaves as a block element
+                }}
+                variant="body2"
+              >
+                {card.text}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
+
+
+
+const ResponsiveGrid2 = ({ hoverCardData }) => {
+  return (
+    <Grid container  >
+      {hoverCardData.map((card) => (
+        <Grid
+          item
+          key={card.id}
+          xs={12} // Full width on extra small screens
+          sm={6} // 2 cards per row on small screens
+          md={3} // 3 cards per row on medium screens
+          lg={3} // 4 cards per row on large screens
+        >
+          <Box
+            sx={{
+              position: "relative",
+              perspective: "1000px", // Enable 3D effect
+              aspectRatio: "2 / 2", 
+              width: "100%",
+              cursor:"pointer"
+            }}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                transformStyle: "preserve-3d",
+                transition: "transform 0.6s ease",
+                "&:hover": {
+                  transform: "rotateY(180deg)",
+                  cursor:"pointer" // Flip the card on hover
+                },
+              }}
+            >
+              {/* Front Side */}
+              <Card
+                sx={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  backfaceVisibility: "hidden",
+                  borderRadius:"0px !important" // Hide front face when flipped
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  image={card.logo}
+                  alt={card.title}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Card>
+
+              {/* Back Side */}
+              <Card
+                sx={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "#ECECEC",
+                  transform: "rotateY(180deg)", // Rotate back face by 180 degrees
+                  backfaceVisibility: "hidden", // Hide back face when flipped
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <CardContent>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontSize: {lg:"0.75rem",md:"0.65rem"},
+                    }}
+                  >
+                    {card.text}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Box>
+          </Box>
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const HoverEffectCard = styled(Card)(({ theme }) => ({
@@ -680,30 +914,32 @@ const HoverCard = ({ item }) => {
 
 const Sectionfour = () => {
   return (
-    <Grid2 container >
-      {hoverCardPremiumData.map((item, index) => (
-        <Grid2  item xs={12} sm={6} md={4} key={index}>
-         <FlipCard 
-        image={item.logo} // Replace with your image URL
-        text={item.text}
-      /> 
-        </Grid2>
-      ))}
-    </Grid2>
+    <ResponsiveGrid2 hoverCardData={hoverCardPremiumData}/>
+    // <Grid2 container >
+    //   {hoverCardPremiumData.map((item, index) => (
+    //     <Grid2  item xs={12} sm={6} md={4} key={index}>
+    //      <FlipCard 
+    //     image={item.logo} // Replace with your image URL
+    //     text={item.text}
+    //   /> 
+    //     </Grid2>
+    //   ))}
+    // </Grid2>
   );
 };
 const Sectionfivechild = () => {
   return (
-    <Grid2 container>
-      {hoverCardPremiumDatamulti.map((item, index) => (
-        <Grid2  item xs={12} sm={6} md={4}  key={index}>
-         <FlipCardmulti 
-        image={item.logo} // Replace with your image URL
-        text={item.text}
-      /> 
-        </Grid2>
-      ))}
-    </Grid2>
+    <ResponsiveGrid2 hoverCardData={hoverCardPremiumDatamulti}/>
+    // <Grid2 container>
+    //   {hoverCardPremiumDatamulti.map((item, index) => (
+    //     <Grid2  item xs={12} sm={6} md={4}  key={index}>
+    //      <FlipCardmulti 
+    //     image={item.logo} // Replace with your image URL
+    //     text={item.text}
+    //   /> 
+    //     </Grid2>
+    //   ))}
+    // </Grid2>
   );
 };
 
