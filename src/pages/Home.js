@@ -675,7 +675,7 @@ const LandingComponent2 = () => {
           }}
         >
 
-<Grid container spacing={1} p={2}>
+<Grid container spacing={1} p={0}>
         {MemberVideoData.map((item, index) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
             <CardMedia
@@ -704,7 +704,7 @@ const LandingComponent2 = () => {
 
 const LandingComponent3 = () => {
   return (
-    <Box sx={{ p: {xs:2,md:10,sm:10,lg:10}, pt: 0, pb: 1, background: "#fff" }}>
+    <Box sx={{ p: {xs:3,md:10,sm:10,lg:10}, pt: 0, pb: 1, background: "#fff" }}>
       <Divider sx={{ borderColor: MyColor.borderColor }} />
       <Grid2
         sx={{

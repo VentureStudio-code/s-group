@@ -21,7 +21,7 @@ const Contact = () => {
           md={6}
           lg={6}
           sx={{
-            padding: { md: 5, lg: 3, xs: 2 },
+            padding: { md: 5, lg: 3, xs: 3 },
             width: { lg: "55%", md: "55%" },
           }}
         >
@@ -36,7 +36,7 @@ const Contact = () => {
               width: "100%",
             }}
           />
-          <Grid2 p={1}>
+          <Grid2 p={0}>
             <Typography sx={{ fontWeight: "600" }}>
               S-Group Membership Application Process:
             </Typography>
@@ -158,7 +158,7 @@ const Contact = () => {
           />
         </Grid2>
       </Grid2>
-      <Grid2 sx={{ background: "#ECECEC", paddingLeft: { lg: 4 } }} p={2}>
+      <Grid2 sx={{ background: "#ECECEC", paddingLeft: { lg: 4 } }} p={3}>
         <Button
           size="small"
           variant="outlined"

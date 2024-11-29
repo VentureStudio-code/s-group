@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
         sx={{
           bgcolor: MyColor.backgroundColor,
           color: "white",
-          p: 4,
+          p: 3,
         }}
       >
          <Footer/>

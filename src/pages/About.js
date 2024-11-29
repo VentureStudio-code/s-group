@@ -239,7 +239,7 @@ const Member = ({ member, index }) => {
           pr: { xs: 0, sm: 0, md: 3, lg: 3 },
           pt: { xs: 3, sm: 3, md: 4, lg: 4 },
           pl: { xs: 0, sm: 0, md: 9, lg: 9 },
-          p: { xs: 5, sm: 5 },
+          p: { xs: 3, sm: 5 },
         }}
       >
         <Typography
@@ -298,7 +298,7 @@ const Member = ({ member, index }) => {
 
 const MissionStatement = () => {
   return (
-    <Grid2 sx={{ background: "#ECECEC", p: 4 }} textAlign={"center"}>
+    <Grid2 sx={{ background: "#ECECEC", p: 3 }} textAlign={"center"}>
       <Grid2>
         <CardMedia
           component="img"
@@ -402,7 +402,7 @@ const Section3 = () => {
         sm={6}
         md={6}
         lg={6}
-        p={4}
+        p={3}
         sx={{ pr: { md: 0, lg: 0 }, width: { md: "50%", lg: "50%" } }}
       >
         <Grid2>
@@ -521,7 +521,7 @@ const Section3 = () => {
         sm={6}
         md={6}
         lg={6}
-        p={4}
+        p={3}
         sx={{
           width: { md: "50%", lg: "50%" },
         }}
@@ -661,7 +661,7 @@ const Leftcardmedia = ({
           }}
         />
       </Grid2>
-      <Grid2 md={6} lg={6} sx={{width:{md:"70%",lg:"60%"},pl:4 ,pr:4, pt:2,pb:2}} >
+      <Grid2 md={6} lg={6} sx={{width:{md:"70%",lg:"60%"},pl:3 ,pr:3, pt:2,pb:2}} >
         <Typography sx={{pb:3,textAlign:"center", fontSize:"1.5rem",color:MyColor.borderColor}}>{topheading}</Typography>
         <Typography sx={{fontSize: {
                     xs: "0.9rem",
@@ -723,7 +723,7 @@ const Rightcardmedia = ({
 }) => {
   return (
     <Grid2  md={12} lg={12} sx={{display:{md:"flex",lg:"flex"},alignItems:"center"}}>
-      <Grid2  md={6} lg={6} sx={{width:{md:"65%",lg:"60%"},paddingInline:4}}>
+      <Grid2  md={6} lg={6} sx={{width:{md:"65%",lg:"60%"},paddingInline:3}}>
         <Typography>{topheading}</Typography>
         <Typography sx={{fontSize: {
                     xs: "0.9rem",
@@ -811,7 +811,7 @@ const RightcardmediaMobile = ({
         lg={6}
         sx={{
           width: { md: "65%", lg: "60%" },
-          paddingInline: 4,
+          paddingInline: 3,
           order: { xs: 2, md: 1 }, // Content appears below image on mobile
         }}
       >

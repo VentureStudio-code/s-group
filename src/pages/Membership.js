@@ -395,7 +395,7 @@ const BackgroundImageWithText = () => {
 
 const Sectionone = () => {
   return (
-    <Grid2 sx={{ p: 4.5, background: "#ECECEC" }}>
+    <Grid2 sx={{ p: 3, background: "#ECECEC" }}>
       <Grid2>
         <Typography
           sx={{
@@ -409,7 +409,7 @@ const Sectionone = () => {
         </Typography>
       </Grid2>
       <Divider />
-      <Grid2 p={4}>
+      <Grid2 p={3}>
         <CardMedia
           component="img"
           height="80"
@@ -520,7 +520,7 @@ const Sectionthree = () => {
           }}
         />
       </Grid2>
-      <Grid2 p={4}>
+      <Grid2 p={3}>
         <Typography
           sx={{
             paddingInline: 0,
