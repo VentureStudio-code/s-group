@@ -44,8 +44,15 @@ const MediaCarousel = () => {
                   alt="s-group"
                   // controls
                   loop
-                  autoPlay
                   muted
+                  onClick={(event) => {
+                    const video = event.target;
+                    if (video.paused) {
+                      video.play();
+                    } else {
+                      video.pause();
+                    }
+                  }}
                   sx={{ width: "100%", height: "22rem", objectFit: "cover" }}
               />
             </Grid>

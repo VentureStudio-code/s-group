@@ -735,7 +735,7 @@ const ResponsiveGrid2 = ({ hoverCardData }) => {
         <Grid
           item
           key={card.id}
-          xs={12} // Full width on extra small screens
+          xs={6} // Full width on extra small screens
           sm={6} // 2 cards per row on small screens
           md={3} // 3 cards per row on medium screens
           lg={3} // 4 cards per row on large screens
@@ -803,7 +803,7 @@ const ResponsiveGrid2 = ({ hoverCardData }) => {
                   <Typography
                     variant="body2"
                     sx={{
-                      fontSize: {lg:"0.75rem",md:"0.65rem"},
+                      fontSize: {lg:"0.75rem",md:"0.65rem",xs:"0.5rem"},
                     }}
                   >
                     {card.text}

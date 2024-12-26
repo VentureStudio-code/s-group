@@ -117,7 +117,7 @@ const BackgroundImageWithText = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "60%",
+          top: "50%",
           left: "50%",
           width: "80%",
           p: 1,
