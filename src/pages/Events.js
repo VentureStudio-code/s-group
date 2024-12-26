@@ -260,9 +260,9 @@ function ActionAreaCard({ imageuri, title, date }) {
           // onClick={() => {
           //   window.open("https://s-group.co.za/s-group-social-business-networking-all-white-villa-event-2024-video/", "_blank"); // Replace with your desired URL
           // }}
-          onClick={() => {
-            window.location.href = "https://s-group.co.za/s-group-social-business-networking-all-white-villa-event-2024-video/"; // Replace with your desired URL
-          }}
+          // onClick={() => {
+          //   window.location.href = "https://s-group.co.za/s-group-social-business-networking-all-white-villa-event-2024-video/"; // Replace with your desired URL
+          // }}
         />
         <CardContent>
           <Typography
